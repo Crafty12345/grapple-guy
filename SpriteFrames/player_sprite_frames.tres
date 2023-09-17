@@ -1,0 +1,52 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://caohugcmgaqu1"]
+
+[ext_resource type="Texture2D" uid="uid://b41filcr2c4me" path="res://Textures/sprites/grapple_guy_crouching.png" id="1_380bc"]
+[ext_resource type="Texture2D" uid="uid://byjvf43gtgohi" path="res://Textures/sprites/grapple_guy_running_right_1.png" id="1_v3k7n"]
+[ext_resource type="Texture2D" uid="uid://cqd40yewru7g2" path="res://Textures/sprites/grapple_guy_idle.png" id="1_xuuwy"]
+[ext_resource type="Texture2D" uid="uid://prcoyyhvhqrv" path="res://Textures/sprites/grapple_guy_running_right_2.png" id="2_gvyqx"]
+[ext_resource type="Texture2D" uid="uid://cat8ld8fvf3yl" path="res://Textures/sprites/grapple_guy_crouching_moving.png" id="2_j2vnb"]
+[ext_resource type="Texture2D" uid="uid://cuvxr1fdljhck" path="res://Textures/sprites/grapple_guy_running_right_3.png" id="3_6xgxy"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_380bc")
+}],
+"loop": true,
+"name": &"crouching_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_380bc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_j2vnb")
+}],
+"loop": true,
+"name": &"crouching_moving",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xuuwy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_v3k7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gvyqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6xgxy")
+}],
+"loop": true,
+"name": &"running",
+"speed": 6.0
+}]

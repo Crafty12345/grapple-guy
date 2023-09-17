@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6nqpvf3dq0jd"]
+
+[ext_resource type="Script" path="res://playerManager.gd" id="1_tyy62"]
+[ext_resource type="SpriteFrames" uid="uid://caohugcmgaqu1" path="res://SpriteFrames/player_sprite_frames.tres" id="2_j0mts"]
+
+[node name="player" type="CharacterBody2D" groups=["Player"]]
+scale = Vector2(0.47, 0.47)
+script = ExtResource("1_tyy62")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.00002, 35)
+scale = Vector2(2.25275, 2.14453)
+sprite_frames = ExtResource("2_j0mts")
+animation = &"crouching_moving"
+
+[node name="collision_polygon" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-11, -24, -5, -31, -5, -46, -18, -53, -26, -67, -21, -86, -3, -91, 11, -90, 23, -80, 27, -63, 20, -51, 8, -46, 5, -35, 13, -24, 21, -9, 15, -6, 6, -17, 9, 1, 10, 24, 23, 59, 30, 91, 34, 111, 38, 117, 32, 122, 24, 122, 19, 118, 2, 50, -18, 123, -30, 124, -36, 124, -39, 118, -39, 109, -27, 65, -17, 32, -9, 20, -8, -11, -13, -7, -16, -17)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="crouching_collision_polygon" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(12.766, -2.12766, 19.1489, 0, 25.5319, 8.51064, 29.7872, 21.2766, 25.5319, 34.0426, 8.51064, 42.5532, 17.0213, 48.9362, 14.8936, 55.3191, 8.51064, 51.0638, 8.51064, 70.2128, 23.4043, 89.3617, 29.7872, 110.638, 31.9149, 123.404, 23.4043, 123.404, 17.0213, 95.7447, 4.25532, 80.8511, 2.12766, 74.4681, -4.25532, 82.9787, -12.766, 102.128, -19.1489, 121.277, -29.7872, 121.277, -21.2766, 93.617, -12.766, 78.7234, -2.12766, 65.9574, -2.12766, 46.8085, -12.766, 53.1915, -14.8936, 46.8085, -4.25532, 40.4255, -19.1489, 31.9149, -23.4043, 19.1489, -19.1489, 8.51064, -14.8936, 2.12766, -6.38298, -2.12766, 2.12766, -2.12766, 8.51064, -2.12766)
