@@ -1,13 +1,14 @@
 extends CharacterBody2D
 
 
-const JUMP_VELOCITY = -1000.0
+const JUMP_VELOCITY = -1100.0
+const gravity_ratio = 2.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var default_gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-@onready var animation_player = $AnimatedSprite2D
-@onready var collision_polygon = $collision_polygon
-@onready var crouching_collision_polygon = $crouching_collision_polygon
+@onready var animation_player: AnimatedSprite2D = $AnimatedSprite2D
+@onready var def_collision_polygon: CollisionPolygon2D = $collision_polygon
+@onready var crouching_collision_polygon: CollisionPolygon2D = $crouching_collision_polygon
 
 
 func _physics_process(delta):
@@ -16,9 +17,14 @@ func _physics_process(delta):
 	var gravity = default_gravity
 	
 	if Input.is_action_pressed("down"):
-		SPEED = SPEED / 2
+		def_collision_polygon.disabled = true
+		crouching_collision_polygon.disabled = false
+		SPEED = SPEED / gravity_ratio
 		if not is_on_floor():
-			gravity *= 2
+			gravity *= gravity_ratio
+	else:
+		def_collision_polygon.disabled = false
+		crouching_collision_polygon.disabled = true
 	
 	# Add the gravity.
 	if not is_on_floor():
